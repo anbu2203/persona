@@ -26,6 +26,10 @@ const techMono = Share_Tech_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://v0-anbumathi-chezhian-2203.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
   title: 'Anbumathi Chezhian | Electronics & IoT Developer',
   description:
     'Portfolio of Anbumathi Chezhian — Electronics & IoT project developer building end-to-end connected systems, from sensor to cloud.',
