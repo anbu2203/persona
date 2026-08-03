@@ -1,36 +1,57 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
+import { Inter, Rajdhani, Share_Tech_Mono } from 'next/font/google'
 import './globals.css'
+import './portfolio.css'
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const rajdhani = Rajdhani({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-rajdhani',
+  display: 'swap',
+})
+
+const techMono = Share_Tech_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-tech-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
+  title: 'Anbumathi Chezhian | Electronics & IoT Developer',
+  description:
+    'Portfolio of Anbumathi Chezhian — Electronics & IoT project developer building end-to-end connected systems, from sensor to cloud.',
   generator: 'v0.app',
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+  keywords: [
+    'Anbumathi Chezhian',
+    'IoT Developer',
+    'Electronics',
+    'Embedded Systems',
+    'ESP32',
+    'Arduino',
+    'PCB Design',
+    'Portfolio',
+  ],
+  authors: [{ name: 'Anbumathi Chezhian' }],
+  openGraph: {
+    title: 'Anbumathi Chezhian | Electronics & IoT Developer',
+    description:
+      'Building the connected world, one circuit at a time — IoT, embedded systems, and electronics innovation.',
+    type: 'website',
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light dark',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
-  ],
+  colorScheme: 'dark',
+  themeColor: '#080b10',
 }
 
 export default function RootLayout({
@@ -39,8 +60,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html
+      lang="en"
+      className={`portfolio-root ${inter.variable} ${rajdhani.variable} ${techMono.variable}`}
+    >
+      <body className="portfolio-body antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
