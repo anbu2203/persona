@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 const NAV_ITEMS = [
   ['#about', 'About'],
   ['#skills', 'Skills'],
-  ['#certs', 'Certs'],
+  ['#certs', 'Achievements & Certs'],
   ['#projects', 'Projects'],
   ['#hackclub', 'Hack Club'],
   ['#path', 'Path'],
@@ -61,18 +61,22 @@ const SKILL_GROUPS: { cat: string; items: { icon: string; name: string; level: s
 ]
 
 const CERTS = [
-  { badge: '🌐', issuer: 'Google / Coursera', name: 'Google AI Essentials', date: '// Jul 2025 · 5-Course Specialization' },
-  { badge: '☁️', issuer: 'Amazon Web Services', name: 'IoT: Onboarding Raspberry Pi using AWS Greengrass', date: '// Mar 2026' },
-  { badge: '📊', issuer: 'Skill Nation', name: 'AI Dashboards using Microsoft Power BI', date: '// Aug 2025 · Microsoft Certified Trainer' },
-  { badge: '🐍', issuer: 'AI for Techies', name: 'Python using AI Workshop', date: '// Visualizations · Debugging · AI Coding' },
-  { badge: '🤖', issuer: 'be10x', name: 'AI Tools & ChatGPT Workshop', date: '// Presentations · Data Analysis · Coding with AI' },
-  { badge: '🔒', issuer: 'LearnTube.ai', name: 'Cybersecurity Assessment', date: '// Aug 2025' },
-  { badge: '📈', issuer: 'Coursera', name: 'Getting Started with Microsoft Excel', date: '// Mar 2026' },
-  { badge: '💻', issuer: 'Microsoft / Coursera', name: 'IT Support Professional', date: '// Professional Certificate' },
-  { badge: '🎓', issuer: 'SBOA School & Junior College', name: 'Course & Add-on Certificates', date: '// Nov 2024' },
-  { badge: '💡', issuer: 'HP LIFE', name: 'Leadership & Management', date: '// Business & Soft Skills' },
-  { badge: '💼', issuer: 'HP LIFE', name: 'Business Fundamentals', date: '// Entrepreneurial Skills' },
-  { badge: '🚀', issuer: 'HP LIFE', name: 'Entrepreneurship', date: '// Startup & Innovation Mindset' },
+  { badge: '🌐', issuer: 'Google / Coursera', name: 'Google AI Essentials', date: '// Jul 2025 · 5-Course Specialization', category: 'AI & Data' },
+  { badge: '☁️', issuer: 'Amazon Web Services', name: 'IoT: Onboarding Raspberry Pi using AWS Greengrass', date: '// Mar 2026', category: 'Cloud & IoT' },
+  { badge: '📊', issuer: 'Skill Nation', name: 'AI Dashboards using Microsoft Power BI', date: '// Aug 2025 · Microsoft Certified Trainer', category: 'Analytics' },
+  { badge: '🐍', issuer: 'AI for Techies', name: 'Python using AI Workshop', date: '// Visualizations · Debugging · AI Coding', category: 'Programming' },
+  { badge: '🤖', issuer: 'be10x', name: 'AI Tools & ChatGPT Workshop', date: '// Presentations · Data Analysis · Coding with AI', category: 'AI & Productivity' },
+  { badge: '🔒', issuer: 'LearnTube.ai', name: 'Cybersecurity Assessment', date: '// Aug 2025', category: 'Cybersecurity' },
+  { badge: '📈', issuer: 'Coursera', name: 'Getting Started with Microsoft Excel', date: '// Mar 2026', category: 'Productivity' },
+  { badge: '💻', issuer: 'Microsoft / Coursera', name: 'IT Support Professional', date: '// Professional Certificate', category: 'IT Support' },
+  { badge: '🎓', issuer: 'SBOA School & Junior College', name: 'Course & Add-on Certificates', date: '// Nov 2024', category: 'Education' },
+  { badge: '💡', issuer: 'HP LIFE', name: 'Leadership & Management', date: '// Business & Soft Skills', category: 'Leadership' },
+  { badge: '💼', issuer: 'HP LIFE', name: 'Business Fundamentals', date: '// Entrepreneurial Skills', category: 'Business' },
+  { badge: '🚀', issuer: 'HP LIFE', name: 'Entrepreneurship', date: '// Startup & Innovation Mindset', category: 'Entrepreneurship' },
+  { badge: '📜', issuer: 'Course Certificate', name: 'Anbumathi Chezhian Course Certificate', date: '// Certificate of completion', category: 'Coursework' },
+  { badge: '🌱', issuer: 'Pasumai Hackathon', name: 'Pasumai Hackathon Participation', date: '// Innovation · Sustainability · Teamwork', category: 'Hackathon' },
+  { badge: '🚁', issuer: 'Drone Piloting', name: 'Drone Piloting Certificate', date: '// Flight operations · Practical training', category: 'Aviation' },
+  { badge: '📈', issuer: 'Finance Shark Tank', name: 'Finance Shark Tank Achievement', date: '// Finance · Pitching · Entrepreneurship', category: 'Finance' },
 ]
 
 const PROJECTS = [
@@ -289,7 +293,7 @@ export default function Page() {
               </div>
               <div className="stat-card">
                 <span className="stat-num">10+</span>
-                <span className="stat-lbl">Certificates</span>
+                <span className="stat-lbl">Certificates &amp; Achievements</span>
               </div>
               <div className="stat-card">
                 <span className="stat-num">3+</span>
@@ -361,6 +365,7 @@ export default function Page() {
                 <div className="cert-badge" aria-hidden="true">
                   {c.badge}
                 </div>
+                <div className="cert-category">{c.category}</div>
                 <div className="cert-issuer">{c.issuer}</div>
                 <div className="cert-name">{c.name}</div>
                 <div className="cert-date">{c.date}</div>
