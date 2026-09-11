@@ -87,8 +87,16 @@ const PROFILE_IMAGES = {
 
 const PROJECTS = [
   {
+    tag: 'Civic Tech · Dashboard',
+    title: 'Smart Sewer Drain System',
+    desc: 'A dark, map-first municipal control room for monitoring sewer levels, flood risk, alerts, crews, and service-level agreements in one operational dashboard.',
+    stack: ['TypeScript', 'Maps', 'Flood Risk', 'SLAs'],
+    link: 'https://github.com/anbu2203/smart-sewer-drain-system',
+    linkLabel: '→ View on GitHub',
+  },
+  {
     tag: 'Hardware · Productivity',
-    title: 'Simple Hackpad ⌨️',
+    title: 'Simple Hackpad',
     desc: 'A custom 4-key productivity macro pad powered by the Seeed Studio XIAO RP2040 and KMK Firmware. Features dedicated shortcuts for KiCad, Spotify, and system tools with an idle RGB rainbow effect.',
     stack: ['Python', 'RP2040', 'KMK Firmware', 'KiCad'],
     link: 'https://github.com/anbu2203/simple-hackpad',
@@ -96,15 +104,23 @@ const PROJECTS = [
   },
   {
     tag: 'Electronics · PCB Design',
-    title: 'DARK SIGNAL 💡',
+    title: 'DARK SIGNAL',
     desc: 'An electronics project exploring how chips like the 555 timer and 4017 counter interact to create sequential LED patterns. Built following the Hack Club guide with custom PCB design.',
     stack: ['555 Timer', '4017 Counter', 'PCB Design', 'Hack Club'],
     link: 'https://github.com/anbu2203/DARK-SIGNAL',
     linkLabel: '⭐ 1  → View on GitHub',
   },
   {
+    tag: 'Water · AI Concept',
+    title: 'Hydromind X',
+    desc: 'A new web project exploring intelligent water and environmental technology concepts through a focused JavaScript experience.',
+    stack: ['JavaScript', 'Web', 'Water Tech', 'Innovation'],
+    link: 'https://github.com/anbu2203/Hydromind-x.com',
+    linkLabel: '→ View on GitHub',
+  },
+  {
     tag: 'IoT · Raspberry Pi',
-    title: 'RaspCamX 📷',
+    title: 'RaspCamX',
     desc: 'A high image quality camera system built on Raspberry Pi — capturing sharp, detailed images with custom configurations for embedded imaging applications.',
     stack: ['Raspberry Pi', 'Camera Module', 'Python', 'Embedded'],
     link: 'https://github.com/anbu2203/raspcamx',
@@ -112,7 +128,7 @@ const PROJECTS = [
   },
   {
     tag: 'Hardware · Portable Computing',
-    title: 'WinXport 💻',
+    title: 'WinXport',
     desc: 'A compact, portable Windows-based tablet built using a LattePanda single-board computer, a 7-inch IPS capacitive touch display, and a battery-powered setup — a fully custom handheld PC.',
     stack: ['LattePanda', 'IPS Display', 'Windows', 'SBC'],
     link: 'https://github.com/anbu2203/winXport',
@@ -120,7 +136,7 @@ const PROJECTS = [
   },
   {
     tag: 'Hardware · Dev Board',
-    title: 'ASTRADEV 🚀',
+    title: 'ASTRADEV',
     desc: 'A custom development board engineered for modern computing and embedded innovation. Designed for flexibility, scalability, and reliability — built for students, makers, and developers to prototype freely.',
     stack: ['PCB Design', 'Embedded', 'Dev Board', 'KiCad'],
     link: 'https://github.com/anbu2203/ASTRADEV',
