@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 const NAV_ITEMS = [
   ['#about', 'About'],
   ['#skills', 'Skills'],
-  ['#certs', 'Certs'],
+  ['#certs', 'Achievements & Certs'],
   ['#projects', 'Projects'],
   ['#hackclub', 'Hack Club'],
   ['#path', 'Path'],
@@ -61,24 +61,42 @@ const SKILL_GROUPS: { cat: string; items: { icon: string; name: string; level: s
 ]
 
 const CERTS = [
-  { badge: '🌐', issuer: 'Google / Coursera', name: 'Google AI Essentials', date: '// Jul 2025 · 5-Course Specialization' },
-  { badge: '☁️', issuer: 'Amazon Web Services', name: 'IoT: Onboarding Raspberry Pi using AWS Greengrass', date: '// Mar 2026' },
-  { badge: '📊', issuer: 'Skill Nation', name: 'AI Dashboards using Microsoft Power BI', date: '// Aug 2025 · Microsoft Certified Trainer' },
-  { badge: '🐍', issuer: 'AI for Techies', name: 'Python using AI Workshop', date: '// Visualizations · Debugging · AI Coding' },
-  { badge: '🤖', issuer: 'be10x', name: 'AI Tools & ChatGPT Workshop', date: '// Presentations · Data Analysis · Coding with AI' },
-  { badge: '🔒', issuer: 'LearnTube.ai', name: 'Cybersecurity Assessment', date: '// Aug 2025' },
-  { badge: '📈', issuer: 'Coursera', name: 'Getting Started with Microsoft Excel', date: '// Mar 2026' },
-  { badge: '💻', issuer: 'Microsoft / Coursera', name: 'IT Support Professional', date: '// Professional Certificate' },
-  { badge: '🎓', issuer: 'SBOA School & Junior College', name: 'Course & Add-on Certificates', date: '// Nov 2024' },
-  { badge: '💡', issuer: 'HP LIFE', name: 'Leadership & Management', date: '// Business & Soft Skills' },
-  { badge: '💼', issuer: 'HP LIFE', name: 'Business Fundamentals', date: '// Entrepreneurial Skills' },
-  { badge: '🚀', issuer: 'HP LIFE', name: 'Entrepreneurship', date: '// Startup & Innovation Mindset' },
+  { badge: '🌐', issuer: 'Google / Coursera', name: 'Google AI Essentials', date: '// Jul 2025 · 5-Course Specialization', category: 'AI & Data' },
+  { badge: '☁️', issuer: 'Amazon Web Services', name: 'IoT: Onboarding Raspberry Pi using AWS Greengrass', date: '// Mar 2026', category: 'Cloud & IoT' },
+  { badge: '📊', issuer: 'Skill Nation', name: 'AI Dashboards using Microsoft Power BI', date: '// Aug 2025 · Microsoft Certified Trainer', category: 'Analytics' },
+  { badge: '🐍', issuer: 'AI for Techies', name: 'Python using AI Workshop', date: '// Visualizations · Debugging · AI Coding', category: 'Programming' },
+  { badge: '🤖', issuer: 'be10x', name: 'AI Tools & ChatGPT Workshop', date: '// Presentations · Data Analysis · Coding with AI', category: 'AI & Productivity' },
+  { badge: '🔒', issuer: 'LearnTube.ai', name: 'Cybersecurity Assessment', date: '// Aug 2025', category: 'Cybersecurity' },
+  { badge: '📈', issuer: 'Coursera', name: 'Getting Started with Microsoft Excel', date: '// Mar 2026', category: 'Productivity' },
+  { badge: '💻', issuer: 'Microsoft / Coursera', name: 'IT Support Professional', date: '// Professional Certificate', category: 'IT Support' },
+  { badge: '🎓', issuer: 'SBOA School & Junior College', name: 'Course & Add-on Certificates', date: '// Nov 2024', category: 'Education' },
+  { badge: '💡', issuer: 'HP LIFE', name: 'Leadership & Management', date: '// Business & Soft Skills', category: 'Leadership' },
+  { badge: '💼', issuer: 'HP LIFE', name: 'Business Fundamentals', date: '// Entrepreneurial Skills', category: 'Business' },
+  { badge: '🚀', issuer: 'HP LIFE', name: 'Entrepreneurship', date: '// Startup & Innovation Mindset', category: 'Entrepreneurship' },
+  { badge: '📜', issuer: 'Course Certificate', name: 'Anbumathi Chezhian Course Certificate', date: '// Certificate of completion', category: 'Coursework' },
+  { badge: '🌱', issuer: 'Pasumai Hackathon', name: 'Pasumai Hackathon Participation', date: '// Innovation · Sustainability · Teamwork', category: 'Hackathon' },
+  { badge: '🚁', issuer: 'Drone Piloting', name: 'Drone Piloting Certificate', date: '// Flight operations · Practical training', category: 'Aviation' },
+  { badge: '📈', issuer: 'Finance Shark Tank', name: 'Finance Shark Tank Achievement', date: '// Finance · Pitching · Entrepreneurship', category: 'Finance' },
 ]
+
+const PROFILE_IMAGES = {
+  portrait: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1786615459232-9RuRdMx5Arw9XLNKi9XPwPie9aiFfP.png',
+  balconyPose: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0021-8IcaDrFBHy4ZIv2A1GQm6oWT2kSxQw.jpg',
+  balconyPortrait: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0020-NYfAywJ3TcBtP0usRxTuaJcMmdJWns.jpg',
+}
 
 const PROJECTS = [
   {
+    tag: 'Civic Tech · Dashboard',
+    title: 'Smart Sewer Drain System',
+    desc: 'A dark, map-first municipal control room for monitoring sewer levels, flood risk, alerts, crews, and service-level agreements in one operational dashboard.',
+    stack: ['TypeScript', 'Maps', 'Flood Risk', 'SLAs'],
+    link: 'https://github.com/anbu2203/smart-sewer-drain-system',
+    linkLabel: '→ View on GitHub',
+  },
+  {
     tag: 'Hardware · Productivity',
-    title: 'Simple Hackpad ⌨️',
+    title: 'Simple Hackpad',
     desc: 'A custom 4-key productivity macro pad powered by the Seeed Studio XIAO RP2040 and KMK Firmware. Features dedicated shortcuts for KiCad, Spotify, and system tools with an idle RGB rainbow effect.',
     stack: ['Python', 'RP2040', 'KMK Firmware', 'KiCad'],
     link: 'https://github.com/anbu2203/simple-hackpad',
@@ -86,15 +104,23 @@ const PROJECTS = [
   },
   {
     tag: 'Electronics · PCB Design',
-    title: 'DARK SIGNAL 💡',
+    title: 'DARK SIGNAL',
     desc: 'An electronics project exploring how chips like the 555 timer and 4017 counter interact to create sequential LED patterns. Built following the Hack Club guide with custom PCB design.',
     stack: ['555 Timer', '4017 Counter', 'PCB Design', 'Hack Club'],
     link: 'https://github.com/anbu2203/DARK-SIGNAL',
     linkLabel: '⭐ 1  → View on GitHub',
   },
   {
+    tag: 'Water · AI Concept',
+    title: 'Hydromind X',
+    desc: 'A new web project exploring intelligent water and environmental technology concepts through a focused JavaScript experience.',
+    stack: ['JavaScript', 'Web', 'Water Tech', 'Innovation'],
+    link: 'https://github.com/anbu2203/Hydromind-x.com',
+    linkLabel: '→ View on GitHub',
+  },
+  {
     tag: 'IoT · Raspberry Pi',
-    title: 'RaspCamX 📷',
+    title: 'RaspCamX',
     desc: 'A high image quality camera system built on Raspberry Pi — capturing sharp, detailed images with custom configurations for embedded imaging applications.',
     stack: ['Raspberry Pi', 'Camera Module', 'Python', 'Embedded'],
     link: 'https://github.com/anbu2203/raspcamx',
@@ -102,7 +128,7 @@ const PROJECTS = [
   },
   {
     tag: 'Hardware · Portable Computing',
-    title: 'WinXport 💻',
+    title: 'WinXport',
     desc: 'A compact, portable Windows-based tablet built using a LattePanda single-board computer, a 7-inch IPS capacitive touch display, and a battery-powered setup — a fully custom handheld PC.',
     stack: ['LattePanda', 'IPS Display', 'Windows', 'SBC'],
     link: 'https://github.com/anbu2203/winXport',
@@ -110,7 +136,7 @@ const PROJECTS = [
   },
   {
     tag: 'Hardware · Dev Board',
-    title: 'ASTRADEV 🚀',
+    title: 'ASTRADEV',
     desc: 'A custom development board engineered for modern computing and embedded innovation. Designed for flexibility, scalability, and reliability — built for students, makers, and developers to prototype freely.',
     stack: ['PCB Design', 'Embedded', 'Dev Board', 'KiCad'],
     link: 'https://github.com/anbu2203/ASTRADEV',
@@ -205,6 +231,16 @@ export default function Page() {
 
       {/* HERO */}
       <section id="hero">
+        <div className="hero-portrait-wrap">
+          <div className="hero-portrait-frame">
+            <img
+              src={PROFILE_IMAGES.portrait}
+              alt="Professional portrait of Anbumathi Chezhian"
+              className="hero-portrait"
+            />
+          </div>
+          <div className="portrait-caption">PROFILE / 2026</div>
+        </div>
         <div className="hero-tag">Electronics &amp; IoT Developer</div>
         <h1 className="hero-name">
           ANBUMATHI
@@ -282,6 +318,14 @@ export default function Page() {
                 Let&apos;s Build Something →
               </a>
             </div>
+            <div className="about-visuals">
+              <div className="about-photo about-photo-tall">
+                <img src={PROFILE_IMAGES.balconyPortrait} alt="Anbumathi Chezhian on a rooftop terrace" />
+              </div>
+              <div className="about-photo about-photo-wide">
+                <img src={PROFILE_IMAGES.balconyPose} alt="Anbumathi Chezhian posing on a rooftop terrace" />
+              </div>
+            </div>
             <div className="about-stats">
               <div className="stat-card">
                 <span className="stat-num">10+</span>
@@ -289,7 +333,7 @@ export default function Page() {
               </div>
               <div className="stat-card">
                 <span className="stat-num">10+</span>
-                <span className="stat-lbl">Certificates</span>
+                <span className="stat-lbl">Certificates &amp; Achievements</span>
               </div>
               <div className="stat-card">
                 <span className="stat-num">3+</span>
@@ -361,6 +405,7 @@ export default function Page() {
                 <div className="cert-badge" aria-hidden="true">
                   {c.badge}
                 </div>
+                <div className="cert-category">{c.category}</div>
                 <div className="cert-issuer">{c.issuer}</div>
                 <div className="cert-name">{c.name}</div>
                 <div className="cert-date">{c.date}</div>
