@@ -79,6 +79,12 @@ const CERTS = [
   { badge: '📈', issuer: 'Finance Shark Tank', name: 'Finance Shark Tank Achievement', date: '// Finance · Pitching · Entrepreneurship', category: 'Finance' },
 ]
 
+const PROFILE_IMAGES = {
+  portrait: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1786615459232-9RuRdMx5Arw9XLNKi9XPwPie9aiFfP.png',
+  balconyPose: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0021-8IcaDrFBHy4ZIv2A1GQm6oWT2kSxQw.jpg',
+  balconyPortrait: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG-20260909-WA0020-NYfAywJ3TcBtP0usRxTuaJcMmdJWns.jpg',
+}
+
 const PROJECTS = [
   {
     tag: 'Hardware · Productivity',
@@ -209,6 +215,16 @@ export default function Page() {
 
       {/* HERO */}
       <section id="hero">
+        <div className="hero-portrait-wrap">
+          <div className="hero-portrait-frame">
+            <img
+              src={PROFILE_IMAGES.portrait}
+              alt="Professional portrait of Anbumathi Chezhian"
+              className="hero-portrait"
+            />
+          </div>
+          <div className="portrait-caption">PROFILE / 2026</div>
+        </div>
         <div className="hero-tag">Electronics &amp; IoT Developer</div>
         <h1 className="hero-name">
           ANBUMATHI
@@ -285,6 +301,14 @@ export default function Page() {
               <a href="#contact" className="btn btn-outline btn-sm">
                 Let&apos;s Build Something →
               </a>
+            </div>
+            <div className="about-visuals">
+              <div className="about-photo about-photo-tall">
+                <img src={PROFILE_IMAGES.balconyPortrait} alt="Anbumathi Chezhian on a rooftop terrace" />
+              </div>
+              <div className="about-photo about-photo-wide">
+                <img src={PROFILE_IMAGES.balconyPose} alt="Anbumathi Chezhian posing on a rooftop terrace" />
+              </div>
             </div>
             <div className="about-stats">
               <div className="stat-card">
