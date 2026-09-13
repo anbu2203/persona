@@ -144,6 +144,7 @@ body.portfolio-body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  animation: hero-rise 0.7s ease both;
 }
 .hero-tag::before {
   content: '';
@@ -152,6 +153,7 @@ body.portfolio-body {
 }
 
 .hero-name {
+  animation: hero-rise 0.8s 0.08s ease both;
   font-family: var(--head);
   font-size: clamp(2.8rem, 7vw, 5.5rem);
   font-weight: 700;
@@ -175,6 +177,7 @@ body.portfolio-body {
 }
 
 .hero-desc {
+  animation: hero-rise 0.8s 0.18s ease both;
   max-width: 520px;
   color: var(--text-dim);
   font-size: 0.95rem;
@@ -182,6 +185,7 @@ body.portfolio-body {
 }
 
 .hero-cta {
+  animation: hero-rise 0.8s 0.28s ease both;
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
@@ -787,10 +791,17 @@ body.portfolio-body {
 .btn-sm { font-size: 0.75rem; padding: 0.6rem 1.4rem; }
 
 /* ── RESPONSIVE ── */
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
-  .portfolio nav { padding: 1rem 1.2rem; }
-  .nav-links { gap: 1rem; }
-  .nav-links a { font-size: 0.72rem; }
+  .portfolio nav { padding: 0.9rem 1.2rem; align-items: flex-start; }
+  .nav-logo { flex: 0 0 auto; }
+  .nav-links { gap: 0.8rem; overflow-x: auto; padding-bottom: 0.2rem; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { font-size: 0.68rem; white-space: nowrap; }
   .about-grid, .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
   .hero-portrait-wrap { position: relative; right: auto; top: auto; transform: none; order: -1; width: min(220px, 68vw); margin: 0 auto 2rem; }
   .hero-portrait-frame { box-shadow: 8px 8px 0 rgba(123,47,255,0.22); }
