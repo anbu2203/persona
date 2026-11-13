@@ -97,7 +97,7 @@ const PROJECTS = [
   {
     tag: 'Hardware · Productivity',
     title: 'Simple Hackpad',
-    desc: 'A custom 4-key productivity macro pad powered by the Seeed Studio XIAO RP2040 and KMK Firmware. Features dedicated shortcuts for KiCad, Spotify, and system tools with an idle RGB rainbow effect.',
+    desc: 'A custom 4-key productivity macro pad powered by the Seeed Studio XIAO RP2040 and KMK Firmware. Features dedicated shortcuts for KiCad, Spotify, and system tools with an idle RGB rainb[...',
     stack: ['Python', 'RP2040', 'KMK Firmware', 'KiCad'],
     link: 'https://github.com/anbu2203/simple-hackpad',
     linkLabel: '⭐ 2  → View on GitHub',
@@ -129,7 +129,7 @@ const PROJECTS = [
   {
     tag: 'Hardware · Portable Computing',
     title: 'WinXport',
-    desc: 'A compact, portable Windows-based tablet built using a LattePanda single-board computer, a 7-inch IPS capacitive touch display, and a battery-powered setup — a fully custom handheld PC.',
+    desc: 'A compact, portable Windows-based tablet built using a LattePanda single-board computer, a 7-inch IPS capacitive touch display, and a battery-powered setup — a fully custom handheld [...]',
     stack: ['LattePanda', 'IPS Display', 'Windows', 'SBC'],
     link: 'https://github.com/anbu2203/winXport',
     linkLabel: '⭐ 1  → View on GitHub',
@@ -137,7 +137,7 @@ const PROJECTS = [
   {
     tag: 'Hardware · Dev Board',
     title: 'ASTRADEV',
-    desc: 'A custom development board engineered for modern computing and embedded innovation. Designed for flexibility, scalability, and reliability — built for students, makers, and developers to prototype freely.',
+    desc: 'A custom development board engineered for modern computing and embedded innovation. Designed for flexibility, scalability, and reliability — built for students, makers, and developer[...',
     stack: ['PCB Design', 'Embedded', 'Dev Board', 'KiCad'],
     link: 'https://github.com/anbu2203/ASTRADEV',
     linkLabel: '⭐ 1  → View on GitHub',
@@ -179,7 +179,6 @@ const TIMELINE = [
 
 export default function Page() {
   useEffect(() => {
-    // Scroll reveal
     const reveals = Array.from(document.querySelectorAll<HTMLElement>('.reveal'))
     const observer = new IntersectionObserver(
       (entries) => {
@@ -194,7 +193,6 @@ export default function Page() {
     )
     reveals.forEach((el) => observer.observe(el))
 
-    // Active nav link highlight
     const sections = Array.from(document.querySelectorAll<HTMLElement>('section[id]'))
     const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav-links a'))
     const onScroll = () => {
@@ -217,7 +215,6 @@ export default function Page() {
 
   return (
     <div className="portfolio">
-      {/* NAV */}
       <nav>
         <div className="nav-logo">AC_PORTFOLIO</div>
         <div className="nav-links">
@@ -229,7 +226,6 @@ export default function Page() {
         </div>
       </nav>
 
-      {/* HERO */}
       <section id="hero">
         <div className="hero-portrait-wrap">
           <div className="hero-portrait-frame">
@@ -241,6 +237,11 @@ export default function Page() {
           </div>
           <div className="portrait-caption">PROFILE / 2026</div>
         </div>
+
+        <div className="hero-stamp" aria-label="Profile stamp">
+          <img src={PROFILE_IMAGES.portrait} alt="Small profile stamp" />
+        </div>
+
         <div className="hero-tag">Electronics &amp; IoT Developer</div>
         <h1 className="hero-name">
           ANBUMATHI
@@ -287,7 +288,6 @@ export default function Page() {
         </svg>
       </section>
 
-      {/* ABOUT */}
       <section id="about">
         <div className="reveal">
           <div className="sec-label">{'// 01 — about.me'}</div>
@@ -348,7 +348,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* SKILLS */}
       <section id="skills">
         <div className="reveal">
           <div className="sec-label">{'// 02 — tech.stack'}</div>
@@ -376,7 +375,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CERTIFICATES */}
       <section id="certs">
         <div className="reveal">
           <div className="sec-label">{'// 03 — achievements.unlock'}</div>
@@ -415,7 +413,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* PROJECTS */}
       <section id="projects">
         <div className="reveal">
           <div className="sec-label">{'// 04 — projects.build()'}</div>
@@ -456,7 +453,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* HACK CLUB */}
       <section id="hackclub">
         <div className="reveal">
           <div className="sec-label">{'// 04.5 — community.join()'}</div>
@@ -524,7 +520,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* LEARNING PATH */}
       <section id="path">
         <div className="reveal">
           <div className="sec-label">{'// 05 — journey.log'}</div>
@@ -545,7 +540,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CONTACT */}
       <section id="contact">
         <div className="reveal">
           <div className="sec-label">{'// 06 — contact.init()'}</div>
@@ -596,7 +590,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer>
         <span>ANBUMATHI CHEZHIAN</span> &nbsp;·&nbsp; Electronics &amp; IoT Developer &nbsp;·&nbsp;
         Built with <span>♥</span>
