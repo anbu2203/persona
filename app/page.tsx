@@ -97,7 +97,7 @@ const PROJECTS = [
   {
     tag: 'Hardware · Productivity',
     title: 'Simple Hackpad',
-    desc: 'A custom 4-key productivity macro pad powered by the Seeed Studio XIAO RP2040 and KMK Firmware. Features dedicated shortcuts for KiCad, Spotify, and system tools with an idle RGB rainb[...',
+    desc: 'A custom 4-key productivity macro pad powered by the Seeed Studio XIAO RP2040 and KMK Firmware. Features dedicated shortcuts for KiCad, Spotify, and system tools with an idle RGB rainb[...]
     stack: ['Python', 'RP2040', 'KMK Firmware', 'KiCad'],
     link: 'https://github.com/anbu2203/simple-hackpad',
     linkLabel: '⭐ 2  → View on GitHub',
@@ -129,7 +129,7 @@ const PROJECTS = [
   {
     tag: 'Hardware · Portable Computing',
     title: 'WinXport',
-    desc: 'A compact, portable Windows-based tablet built using a LattePanda single-board computer, a 7-inch IPS capacitive touch display, and a battery-powered setup — a fully custom handheld [...]',
+    desc: 'A compact, portable Windows-based tablet built using a LattePanda single-board computer, a 7-inch IPS capacitive touch display, and a battery-powered setup — a fully custom handheld [...]
     stack: ['LattePanda', 'IPS Display', 'Windows', 'SBC'],
     link: 'https://github.com/anbu2203/winXport',
     linkLabel: '⭐ 1  → View on GitHub',
@@ -137,7 +137,7 @@ const PROJECTS = [
   {
     tag: 'Hardware · Dev Board',
     title: 'ASTRADEV',
-    desc: 'A custom development board engineered for modern computing and embedded innovation. Designed for flexibility, scalability, and reliability — built for students, makers, and developer[...',
+    desc: 'A custom development board engineered for modern computing and embedded innovation. Designed for flexibility, scalability, and reliability — built for students, makers, and developer[...]
     stack: ['PCB Design', 'Embedded', 'Dev Board', 'KiCad'],
     link: 'https://github.com/anbu2203/ASTRADEV',
     linkLabel: '⭐ 1  → View on GitHub',
@@ -231,7 +231,7 @@ export default function Page() {
           <div className="hero-portrait-frame">
             <img
               src={PROFILE_IMAGES.portrait}
-              alt="Professional portrait of Anbumathi Chezhian"
+              alt="Portrait of Anbumathi Chezhian, Electronics and IoT developer"
               className="hero-portrait"
             />
           </div>
@@ -239,7 +239,10 @@ export default function Page() {
         </div>
 
         <div className="hero-stamp" aria-label="Profile stamp">
-          <img src={PROFILE_IMAGES.portrait} alt="Small profile stamp" />
+          <img
+            src={PROFILE_IMAGES.portrait}
+            alt="Small portrait of Anbumathi Chezhian, Electronics and IoT developer"
+          />
         </div>
 
         <div className="hero-tag">Electronics &amp; IoT Developer</div>
